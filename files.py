@@ -66,10 +66,10 @@ def bin_dir():
     return os.path.join(program_dir(), bin())
 
 def image_dir():
-    return os.path.join(program_dir(), 'Images')
+    return os.path.join(program_dir(), 'images')
 
 def sample_dir():
-    return os.path.join(program_dir(), 'Samples')
+    return os.path.join(program_dir(), 'samples')
 
 def binary_ok(fullpath):
     if not fullpath:

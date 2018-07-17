@@ -35,8 +35,8 @@ DATA_FILES = ['platforms.py',
  'partition_input.py',
  'my_setup.py',
  'control.py',
- 'Images',
- 'Samples',
+ 'images',
+ 'samples',
  'bin-mac']
 OPTIONS = {'argv_emulation': True, 'iconfile': '/Users/mccune/gui/v4/p9.icns'}
 
