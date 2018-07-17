@@ -1,0 +1,20 @@
+assign(domain_size, 4).
+assign(max_models, -1).         % This means that there is no limit
+
+formulas(assumptions).
+
+% Mace4 produces 152 quasigroups of order 4.  If we
+% print the models and run them through isofilter,
+% we get 35 nonisomorphic quasigroups of order 4.
+%
+% For order 5, 10944 are generated, and isofilter
+% reduces that to 1411.
+
+% Equational quasigroup axioms
+
+x * (x \ y) = y.
+x \ (x * y) = y.
+(x / y) * y = x.
+(x * y) / y = x.
+
+end_of_list.

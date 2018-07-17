@@ -1,0 +1,39 @@
+
+% The following op commands allow us to use an additional infix
+% operation (@) and omit some parentheses (for *).
+%
+% * is the semigroup operation; @ is the commutator.
+% x*y*z is right associated; x*y@z is (x*y)@z
+
+op(450, infix, "@").
+op(400, infix_right, "*").
+
+redeclare(implication, IMPLIES).
+
+assign(new_constants, 1).
+
+assign(max_weight, 25).
+
+formulas(assumptions).
+
+  x * y = x * z IMPLIES y = z  # label(left_cancellation).
+  y * x = z * x IMPLIES y = z  # label(right_cancellation).
+
+  (x * y) * z = x * (y * z)    # label(semigroup).
+  y * x * (x @ y) = x * y      # label(CS_admits_commutator).
+
+end_of_list.
+
+formulas(assumptions).
+% (x @ y) @ z = u @ (v @ w)              # label("(A) commutator is associative").
+% (x @ y) * z = z * (x @ y)              # label("(N) nilpotent class 2").
+% (x @ z) * (y @ z) = (x * y) @ z        # label("(D) distributivity").
+  x * y * z * y * x = y * x * z * x * y  # label("(E) CS essence of N").
+end_of_list.
+
+formulas(goals).
+  (x @ y) @ z = u @ (v @ w)              # label("(A) commutator is associative").
+% (x @ y) * z = z * (x @ y)              # label("(N) nilpotent class 2").
+% (x @ z) * (y @ z) = (x * y) @ z        # label("(D) distributivity").
+% x * y * z * y * x = y * x * z * x * y  # label("(E) CS essence of N").
+end_of_list.

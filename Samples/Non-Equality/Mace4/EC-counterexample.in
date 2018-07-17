@@ -1,0 +1,20 @@
+
+formulas(assumptions).
+
+% The candidate below is a theorem of the equivalential calculus.
+% We can show that it is not a single axiom, because e(x,x) does not
+% follow.
+
+% Mace4 should produce a counterexample immediately.
+
+  -P(e(x,y)) | -P(x) | P(y) # label(Condensed_detachment).
+
+  P(e(e(x,y),e(e(y,z),e(z,x)))) # label(candidate).
+
+end_of_list.
+
+formulas(goals).
+
+  P(e(x,x)) # label(Reflexivity).
+
+end_of_list.

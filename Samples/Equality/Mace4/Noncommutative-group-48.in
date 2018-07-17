@@ -1,0 +1,17 @@
+assign(domain_size, 48).
+
+clear(negprop).  % This reduces the time from 3 seconds to 1.
+
+formulas(assumptions).
+
+% Noncommutative group of size 48.  (See additional options.)
+
+% Mace4 should produce a counterexample in a few seconds.
+
+e * x = x.
+x' * x = e.
+(x * y) * z = x * (y * z).
+
+A * B != B * A.  % There are two noncommuting elements.
+
+end_of_list.

@@ -1,0 +1,26 @@
+assign(new_constants, 1).
+
+assign(max_weight,25).
+
+formulas(sos).
+
+% Distributivity from a nonstandard Boolean algebra (BA) basis.
+
+% Prover9 should produce a proof in a few seconds.
+
+% Nonstandard Boolean algebra basis.
+
+  x v (y v z) = y v (x v z).
+  x ^ y = (x' v y')'.
+  x v x' = y v y'.
+  (x v y') ^ (x v y) = x.
+
+end_of_list.
+
+set(restrict_denials).
+
+formulas(goals).
+
+  x ^ (y v z) = (x ^ y) v (x ^ z) # label(Distributivity).
+
+end_of_list.

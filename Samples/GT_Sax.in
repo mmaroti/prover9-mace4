@@ -1,0 +1,15 @@
+formulas(assumptions).
+
+  % This is a candidate single axiom for Group Theory.
+  % The problem is open, so both Prover9 and Mace4 should
+  % run for a long time on it.
+
+  f(x,g(f(x,f(f(y,f(g(f(x,y)),g(z))),x)))) = z # label(cand_33).
+
+end_of_list.
+
+formulas(goals).
+
+  f(f(x,y),z) = f(x,f(y,z)) # label(associativity).
+
+end_of_list.

@@ -1,0 +1,7 @@
+% ./Mac.setup
+
+    builds setup.py  (so we shouldn't have our own source file setup.py)
+
+% ./Mac.build
+
+    puts new app in dist

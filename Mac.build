@@ -1,0 +1,5 @@
+#!/bin/csh
+
+python Mac-setup.py py2app > & err
+
+echo 'See the file err'

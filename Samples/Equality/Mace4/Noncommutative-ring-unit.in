@@ -1,0 +1,35 @@
+formulas(assumptions).
+
+% Noncommutative ring with unit.
+
+% Mace4 should produce a counterexample immediately.
+
+% <+,-,0> is an Abelian group:
+
+0 + x = x.
+-x + x = 0.
+(x+y)+z = x+(y+z).
+x+y = y+x.
+
+% Product is associative:
+
+(x*y)*z = x*(y*z).
+
+% Left and right distributivity:
+
+x*(y+z) = (x*y)+(x*z).
+(y+z)*x = (y*x)+(z*x).
+
+% Let the ring have a unit.
+
+1 * x = x.
+x * 1 = x.
+
+end_of_list.
+
+formulas(goals).
+
+x * y = y * x  # answer(commtativity_of_product).
+
+end_of_list.
+

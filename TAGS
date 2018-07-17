@@ -1,0 +1,208 @@
+
+control.py,1399
+class Prover9:15,244
+    def search_command(43,1030
+    def success_command(50,1219
+    def exists_solution(57,1412
+    def option_triples_to_success_args(60,1510
+    def exit_message(70,1861
+    def logo_bitmap(76,2034
+    def get_info_from_stderr(84,2340
+class Mace4:107,3207
+    def search_command(134,4018
+    def success_command(141,4211
+    def option_triples_to_success_args(148,4406
+    def exists_solution(157,4726
+    def exit_message(160,4824
+    def logo_bitmap(166,4997
+    def get_info_from_stderr(173,5275
+class Run_program:189,5836
+    def __init__(190,5855
+    def run(202,6245
+    def pause(271,9143
+    def resume(276,9300
+    def get_stderr_info(281,9458
+    def kill(288,9727
+    def done_with_job(296,10061
+class Program_panel(305,10270
+    def __init__(307,10302
+    def on_info(432,15317
+    def update_info(443,15807
+    def info_reset(454,16135
+    def on_time_ctrl(461,16311
+    def start(467,16534
+    def pause_resume(486,17327
+    def on_kill(501,17872
+    def job_state(505,18003
+    def job_finished(511,18122
+    def on_reset(554,20006
+    def show_save(570,20528
+    def ss_input(592,21261
+    def ss_output(599,21536
+    def ss_solution(606,21815
+    def onInvoke(617,22328
+    def invoke_later(620,22379
+class Control_panel(625,22544
+    def __init__(626,22575
+    def show_input(657,23745
+def syntax_check(667,24081
+
+files.py,151
+def path_info(9,81
+def program_dir(23,526
+def bin(35,975
+def bin_dir(43,1102
+def image_dir(46,1164
+def sample_dir(49,1231
+def binary_ok(52,1300
+
+Mac-setup.py,0
+
+my_setup.py,919
+class Input_panel(17,227
+    def __init__(19,257
+    def start_auto_highlight(72,2523
+    def stop_auto_highlight(81,2892
+    def on_hilite(90,3155
+    def well_formed_check(97,3341
+    def clear(135,4831
+    def highlight(138,4882
+    def on_text(162,5827
+    def on_char(166,5957
+    def check_highlight(171,6145
+class P9_options_panel(181,6419
+    def __init__(182,6453
+    def switch_options(241,8914
+    def handle_rb1(253,9377
+    def handle_rb2(264,9736
+    def on_reset(268,9832
+class Language_panel(273,9927
+    def __init__(274,9959
+    def on_prolog(329,12076
+    def get_language_input(335,12295
+class Setup_tabs(340,12409
+    def __init__(341,12440
+    def update_font(410,15043
+    def reset(420,15305
+    def assemble_input(427,15462
+    def store_new_input(462,17209
+    def on_changed(507,19115
+    def start_auto_highlight(513,19287
+    def stop_auto_highlight(517,19399
+
+options.py,1015
+def id_to_option(39,658
+def name_to_option(45,821
+def nondefault_options(51,992
+def separate_option_triples_by_case(62,1401
+def option_triples_contains_name(73,1738
+def option_triples_to_string(79,1879
+def print_sharing(93,2302
+def update_label(98,2472
+def update_option(110,2815
+def update_shared(119,3057
+def update_dependent(124,3196
+def link_options(139,3706
+def link_options_by_names(147,3954
+class Options_panel(158,4352
+    def __init__(159,4383
+    def on_change(255,8197
+    def on_reset(266,8560
+class M4_options:276,8853
+    def __init__(318,12563
+    def nondefaults(341,13417
+    def name_to_opt(351,13840
+    def share_external_option(354,13924
+    def reset(363,14315
+class P9_options:368,14403
+    def __init__(615,36973
+    def optionset_names(653,38499
+    def nondefaults(659,38647
+    def name_to_opt(672,39246
+    def share_external_option(679,39440
+    def reset(688,39831
+def set_options(694,39960
+def opt_intersect(737,41413
+def set_options_either(743,41556
+
+partition_input.py,126
+def in_span(7,53
+def norm(13,183
+def split1(20,331
+def split2(35,838
+def partition(63,1882
+def extract_options(108,3175
+
+platforms.py,49
+def Win32(7,104
+def Mac(10,154
+def GTK(13,202
+
+prover9-mace4.py,652
+class Main_frame(270,9300
+    def __init__(274,9375
+    def sample_menu(367,13092
+    def load_sample(397,14337
+    def on_close(408,14661
+    def clear_setup(416,15044
+    def on_open(419,15104
+    def write_input(436,15844
+    def on_save(447,16208
+    def on_saveas(453,16389
+    def get_help(468,17007
+    def get_about(475,17251
+    def tooltip_toggle(478,17350
+    def highlight_toggle(482,17479
+    def auto_highlight(489,17702
+    def select_font(492,17792
+    def setup_toggle(504,18183
+    def run_toggle(527,19262
+class Splash_screen(546,20034
+    def __init__(547,20072
+class My_app(556,20368
+    def OnInit(557,20390
+
+setup.py,0
+
+utilities.py,132
+def grep(3,11
+def grep_last(10,164
+def pattern_spans(17,318
+def comment_spans(26,525
+def member(48,1142
+def intersect(56,1280
+
+Win32-setup.py,0
+
+wx_utilities.py,806
+class State:9,79
+def to_top(19,238
+def absolute_position(24,318
+def size_that_fits(32,505
+def pos_for_center(38,788
+def center_of_screen(46,1096
+def error_dialog(51,1297
+def info_dialog(56,1432
+def open_dir_style(61,1572
+def saveas_dir_style(74,1977
+def max_width(90,2563
+class Text_frame(97,2734
+    def __init__(98,2762
+    def append(133,4048
+    def saveas(137,4169
+    def on_close(160,5092
+    def hilite_error(163,5143
+class Mini_info(183,5934
+    def __init__(184,5965
+    def on_close(225,7453
+    def update(229,7544
+class Invoke_event(239,7773
+    def __init__(246,7955
+    def invoke(253,8173
+class Busy_bar(258,8282
+    def __init__(260,8309
+    def update_bar(271,8634
+    def start(282,8950
+    def pause(288,9148
+    def resume(292,9233
+    def stop(295,9285

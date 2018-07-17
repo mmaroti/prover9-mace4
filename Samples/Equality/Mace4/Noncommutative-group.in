@@ -1,0 +1,24 @@
+formulas(assumptions).
+
+% Find a smallest noncommutative group (by finding the
+% conterexample to the statement that all groups are commutative).
+
+% Mace4 should produce a counterexample immediately.
+
+% Group Theory
+
+  (x * y) * z = x * (y * z)  # label(associativity).
+
+% There is a left identity element, and every element has a left inverse.
+
+  exists e ((all x (e * x = x)) &
+            (all x exists y (y * x = e))).
+
+end_of_list.
+
+formulas(goals).
+
+x * y = y * x  # label(commutativity).
+
+end_of_list.
+

@@ -1,0 +1,27 @@
+
+formulas(assumptions).
+
+% A Problem in combinatory logic.
+%
+% Given combinators L and Q,
+%
+%   Lxy = x(yy)
+%   Qxyz =  y(xz)
+%
+% show that there does not necessarily exist a fixed
+% point combinator F, where Fx=x(Fx).
+
+% Mace4 should produce a counterexample immediately.
+
+a(a(L,x),y) = a(x,a(y,y))       # label(L).
+a(a(a(Q,x),y),z) = a(y,a(x,z))  # label(Q).
+
+end_of_list.
+
+formulas(goals).
+
+% existence of a fixed point combinator
+
+exists Q all x (a(Q,x) = a(x,a(Q,x))) # label(fixed_point_combinator).
+
+end_of_list.

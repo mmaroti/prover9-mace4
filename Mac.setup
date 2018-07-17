@@ -1,0 +1,9 @@
+#!/bin/csh
+
+py2applet --make-setup prover9-mace4.py \
+    platforms.py utilities.py wx_utilities.py files.py \
+    options.py partition_input.py my_setup.py control.py \
+    p9.icns Images Samples bin-mac-ppc bin-mac-intel
+
+mv setup.py Mac-setup.py
+

@@ -1,0 +1,47 @@
+
+assign(max_weight, 50).
+
+function_order([v, c, ^, f]).  % rewrite to join/complement
+
+formulas(assumptions).
+
+% The following equation is a single axiom for orthomodular
+% lattices (OML) in terms of the Sheffer stroke.
+
+% All 14 goals should be proved in about 10 seconds on a
+% fast (2007) workstation.
+
+f(f(f(f(y,x),f(x,z)),u),f(x,f(f(z,f(f(x,x),z)),z))) = x # label(OML_Sh).
+
+% Define the ordinary operations; the "function_order" command
+% above will orient these so the the defined operations will be
+% introduced whenever possible, giving a search that is mostly
+% in terms of the defined operations.
+
+x v y = f(f(x,x),f(y,y))  # label(Def_join).
+x ^ y = f(f(x,y),f(x,y))  # label(Def_meet).
+x' = f(x,x)             # label(Def_complement).
+
+end_of_list.
+
+formulas(goals).
+
+x v (x ^ y) = x                # answer(B1).
+x v (x' ^ (x v y)) = x v y     # answer(OM).
+
+x v (y v z) = y v (x v z)      # answer(AJ).
+x ^ y = (x' v y')'             # answer(DM).
+f(x,y) = x' v y'               # answer(DEF_SS).
+
+x v x = x                      # answer(idempotence_join).
+x ^ x = x                      # answer(idempotence_meet).
+x'' = x                        # answer(cc).
+y v x = x v y                  # answer(commutativity_join).
+y v x = x v y                  # answer(commutativity_meet).
+x v x' = y v y'                # answer(1).
+x ^ x' = y ^ y'                # answer(0).
+
+(x v y) v z = x v (y v z)      # answer(assoc_join).
+(x ^ y) ^ z = x ^ (y ^ z)      # answer(assoc_meet).
+
+end_of_list.

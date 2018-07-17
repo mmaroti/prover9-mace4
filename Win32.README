@@ -1,0 +1,43 @@
+py2exe (Win32)
+
+Use a setup file like this (say Win32-setup.py):
+
+######
+from distutils.core import setup
+import py2exe
+
+setup(windows=[{'script' : 'prover9-mace4.py',
+                'icon_resources' : [(1, 'p9-48.ico')]}],
+      data_files=[
+                  #('Images', ['Images/prover9-5a-128t.gif'])
+                 ])
+#######
+
+(One can specify the data_files, but it seems kind of
+complicated, and I don't see a big advantage.)
+
+Run
+     python Win32-setup.py py2exe
+     
+Copy Images, Samples, bin-win32 to dist
+
+copy gdiplus.dll to dist:
+
+  copy c:\Python25\lib\site-packages\wx-2.8-msw-ansi\wx\gdiplus.dll dist
+  
+If nothing substantial has changed, run the old Win32.iss file to
+bild the installation package.  Otherwise,
+  
+Run Inno Setup
+
+   "New" starts Wizard:
+      1. App name (exe)
+      2. Add folders  Images, Samples, bin-win32
+      3. Add files (all but 3 folder above and main .exe)
+      4. Select option for uninstall icon in main menu.
+      5. Name the setup file (like prover9-mace4-setup.exe)
+      
+    Now, the subriectories (Images, etc.) probably aren't right.
+    Make them like this:
+    Source: C:\Documents and Settings\Bill\Desktop\v4\dist\Samples\*; DestDir: {app}\Samples; Flags: ignoreversion recursesubdirs createallsubdirs
+    Compile setup (meat grinder)

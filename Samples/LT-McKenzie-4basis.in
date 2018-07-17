@@ -1,0 +1,20 @@
+formulas(assumptions).
+
+% McKenzie's absorption 4-basis (self-dual, independent) for
+% Lattice Theory (LT).
+
+% Prover9 should produce a proof in a few seconds.
+
+x v (y ^ (x ^ z)) = x         # label(McKenzie_1).
+x ^ (y v (x v z)) = x         # label(McKenzie_2).
+((y ^ x) v (x ^ z)) v x = x   # label(McKenzie_3).
+((y v x) ^ (x v z)) ^ x = x   # label(McKenzie_4).
+
+end_of_list.
+
+formulas(goals).
+
+(x ^ y) ^ z = x ^ (y ^ z)     # label(assoc_meet).
+
+end_of_list.
+

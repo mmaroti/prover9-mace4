@@ -1,0 +1,3 @@
+s/'flag'/Flag/g
+s/'parm'/Parm/g
+s/'stringparm'/Stringparm/g

@@ -1,0 +1,21 @@
+
+formulas(assumptions).
+
+%  Combinatory Logic
+%  Construct combinator W (Wxy = xyy) in terms of S and K.
+
+% Prover9 should produce a proof immediately.
+
+  a(a(a(S,x),y),z) = a(a(x,z),a(y,z))  # label(S).
+  a(a(K,x),y) = x                      # label(K).
+
+end_of_list.
+
+formulas(goals).
+
+% Don't set(restrict_denials), because the easy proofs
+% paramodulate into the denial.
+
+  exists W all x all y a(a(W,x),y) = a(a(x,y),y) # label(W).
+
+end_of_list.

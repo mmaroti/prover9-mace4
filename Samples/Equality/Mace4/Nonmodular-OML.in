@@ -1,0 +1,33 @@
+formulas(assumptions).
+
+% Find an orthomodular lattice (OML) that is not modular.
+
+% Mace4 should produce a counterexample immediately.
+
+% Lattice Axioms
+
+x ^ y = y ^ x.
+(x ^ y) ^ z = x ^ (y ^ z).
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x v (x ^ y) = x.
+x ^ (x v y) = x.
+
+% The following gives us ortholattices.
+
+x' ^ x = 0.
+x' v x = 1.
+x'' = x.
+x ^ y = (x' v y')'.
+
+% Make it an orthomodular lattice
+
+x v (x' ^ (x v y)) = x v y.  % (OML)
+
+end_of_list.
+
+formulas(goals).
+
+x v (y ^ (x v z)) = (x v y) ^ (x v z) # label(Modularity).
+
+end_of_list.
