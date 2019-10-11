@@ -19,7 +19,6 @@
 
 # system imports
 
-import os, sys
 import re
 import wx
 

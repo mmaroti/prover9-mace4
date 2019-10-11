@@ -21,14 +21,12 @@
 
 # system imports
 
-import os, sys
+import os
 import re
 import wx
 
 # local imports
 
-import partition_input
-import utilities
 from files import *
 from platforms import *
 from wx_utilities import *

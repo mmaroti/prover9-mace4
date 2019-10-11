@@ -19,7 +19,9 @@
 
 # system imports
 
-import os, re, wx
+import os
+import re
+import wx
 
 # local imports
 
@@ -326,7 +328,7 @@ class Busy_bar(wx.Gauge):
 
     def resume(self):
         self.start()
-        
+
     def stop(self):
         self.timer.Stop()
         self.SetValue(0)
@@ -335,4 +337,3 @@ class Busy_bar(wx.Gauge):
         self.state = State.ready
 
 # END class Busy_bar(Guage)
-

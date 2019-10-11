@@ -19,30 +19,31 @@
 
 # system imports
 
-import wx, subprocess
+import subprocess
+import wx
 
 # Platforms.  We'll assume GTK, and test for Win32 and Mac when necessary
 
 def Win32():
-    return wx.Platform=='__WXMSW__'
+    return wx.Platform == '__WXMSW__'
 
 def Mac():
-    return wx.Platform=='__WXMAC__'
+    return wx.Platform == '__WXMAC__'
 
 def GTK():
-    return wx.Platform=='__WXGTK__'
+    return wx.Platform == '__WXGTK__'
 
 def Mac_ppc():
     if not Mac():
         return False
     else:
         try:
-            arch = subprocess.Popen(['arch'],
-                                    stdout=subprocess.PIPE).communicate()[0]
+            arch = subprocess.Popen(
+                ['arch'], stdout=subprocess.PIPE).communicate()[0]
         except:
             arch = '??'
         return arch.strip() == 'ppc'
 
 if Win32():
-    import win32api, win32process
-
+    import win32api
+    import win32process

@@ -19,7 +19,9 @@
 
 # system imports
 
-import os, sys, imp
+import os
+import sys
+import imp
 
 # local imports
 
@@ -78,4 +80,3 @@ def binary_ok(fullpath):
         return os.access(fullpath + '.exe', os.X_OK)
     else:
         return os.access(fullpath, os.X_OK)
-
