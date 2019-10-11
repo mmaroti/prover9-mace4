@@ -452,7 +452,7 @@ class Main_frame(wx.Frame):
             f = open(path)
             input = f.read()
             self.setup.store_new_input(input, None)
-        except IOError, e:
+        except IOError as e:
             error_dialog('Error opening file %s for reading.' % path)
 
         self.SetTitle('Prover9/Mace4')
@@ -481,7 +481,7 @@ class Main_frame(wx.Frame):
                 self.current_path = path
                 self.fmenu.Enable(wx.ID_SAVE, True)
                 self.SetTitle(os.path.basename(path) + ' - Prover9/Mace4')
-            except IOError, e:
+            except IOError as e:
                 error_dialog('Error opening file %s for reading.' % path)
         dlg.Destroy()
 
@@ -498,7 +498,7 @@ class Main_frame(wx.Frame):
                 # self.current_path = path
                 # self.fmenu.Enable(wx.ID_SAVE, True)
                 # self.SetTitle(os.path.basename(path) + ' - Prover9/Mace4')
-            except IOError, e:
+            except IOError as e:
                 error_dialog('Error opening file %s for reading.' % path)
         dlg.Destroy()
 
@@ -509,7 +509,7 @@ class Main_frame(wx.Frame):
             f.write('%% Saved by %s.\n\n' % Banner)
             f.write(input)
             return True
-        except IOError, e:
+        except IOError as e:
             error_dialog('Error opening file %s for writing.' % path)
             return False
 
@@ -635,7 +635,7 @@ class My_app(wx.App):
             path = os.path.join(image_dir(),'prover9-splash.gif')
             if not os.access(path, os.R_OK):
                 error_dialog('splash image %s not found' % path)
-	    else:
+            else:
                 splash = Splash_screen(path)
                 splash.Show(True)
                 time.sleep(1)
