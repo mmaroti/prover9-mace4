@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 #     Copyright (C) 2007 William McCune
 #
 #     This file is part of the LADR Deduction Library.
@@ -16,8 +18,6 @@
 #     along with the LADR Deduction Library; if not, write to the Free Software
 #     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
-#!/usr/bin/python
 
 import re
 import sys
